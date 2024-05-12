@@ -1,0 +1,20 @@
+
+name: simle out put NodeJS CI
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '18.x'
+    - name: install  dependdenci 
+      run: npm install
+    - name: run build
+      run:  npm run dev
